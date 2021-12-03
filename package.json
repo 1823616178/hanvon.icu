@@ -1,0 +1,26 @@
+{
+  "name": "hanvon_icu",
+  "version": "0.0.0",
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "node-sass": "^6.0.1",
+    "sass": "^1.44.0",
+    "sass-loader": "^12.3.0",
+    "unplugin-auto-import": "^0.5.1",
+    "vite-plugin-compression": "^0.3.6",
+    "vite-plugin-svg-icons": "^1.0.5",
+    "vite-plugin-vue-setup-extend": "^0.1.0",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "style-resources-loader": "^1.4.1",
+    "vite": "^2.6.4",
+    "vue-cli-plugin-style-resources-loader": "~0.1.5"
+  }
+}
