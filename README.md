@@ -1,7 +1,7 @@
-# Vue 3 + Vite
+## 资本来到世间，从头到脚每个毛孔都滴着血和肮脏的东西 —— 马克思
+## 物质是标志客观实在的哲学范畴，这种客观实在是人通过感知感觉的，它不依赖于我们的感觉而存在，为我们的感觉所复写、摄影、反映。 —— 列宁
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## ![Image text](https://p1.itc.cn/images01/20210303/192416a543f14338891c40341bdf33b6.jpeg)
 
-## Recommended IDE Setup
+## 愿未来的人间，不再有剥削
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
