@@ -44,13 +44,14 @@
         <div class="container_body">
           <div class="container_body_title">相关法律法规</div>
           <div class="container_e">
-            <div class="box_body_title">《中华人民共和国宪法》</div>
-            <div class="box_body_tk">
-              第二章第四十三条：
-            </div>
-            <div class="box_body_tk_cont">
-              中华人民共和国劳动者有休息的权利。
-              国家发展劳动者休息和休养的设施，规定职工的工作时间和休假制度。
+            <div v-for="(item,index) in gridDataList" :key="index">
+              <div class="box_body_title">{{item.title}}</div>
+              <div class="box_body_tk">
+                {{item.content}}
+              </div>
+              <div class="box_body_tk_cont">
+                {{item.digest}}
+              </div>
             </div>
           </div>
         </div>
@@ -89,22 +90,22 @@ import {grudgesList} from '@/api/grudges'
 import {reactive, ref, toRefs, onMounted} from "vue";
 
 const data = reactive({
-  gridList: []
+  gridDataList: []
 })
 
-let {gridList} = toRefs(data)
+let {gridDataList} = toRefs(data)
 
-function getList() {
-  grudgesList().then(res => {
+async function getList() {
+  await grudgesList().then(res => {
     if (res) {
       console.log(res)
-      gridList = res.data
+      gridDataList.value = res.data
     }
   })
 }
 
 onMounted(() => {
-  grudgesList()
+  getList()
 })
 
 </script>
