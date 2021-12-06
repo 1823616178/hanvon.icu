@@ -7,6 +7,7 @@
     "dev": "vite"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "node-sass": "^6.0.1",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0",

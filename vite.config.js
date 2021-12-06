@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import createVitePlugins from "./vite/plugins";
 import path from 'path'
 
-export default defineConfig(({ mode, command }) => {
+export default defineConfig(({mode, command}) => {
     const env = loadEnv(mode, process.cwd())
     return {
         plugins: createVitePlugins(env, command === 'build'),
@@ -24,7 +24,13 @@ export default defineConfig(({ mode, command }) => {
         server: {
             port: 47880,
             open: true,
-            // proxy: {}
+            proxy: {
+                '/dev-api': {
+                    target: 'http://localhost:58647',
+                    changeOrigin: true,
+                    rewrite: (p) => p.replace(/^\/dev-api/, '')
+                }
+            }
         }
     }
 })

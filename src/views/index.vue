@@ -85,6 +85,27 @@
 </template>
 
 <script setup>
+import {grudgesList} from '@/api/grudges'
+import {reactive, ref, toRefs, onMounted} from "vue";
+
+const data = reactive({
+  gridList: []
+})
+
+let {gridList} = toRefs(data)
+
+function getList() {
+  grudgesList().then(res => {
+    if (res) {
+      console.log(res)
+      gridList = res.data
+    }
+  })
+}
+
+onMounted(() => {
+  grudgesList()
+})
 
 </script>
 
