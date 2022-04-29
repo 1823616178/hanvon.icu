@@ -24,13 +24,13 @@ export default defineConfig(({mode, command}) => {
         server: {
             port: 47880,
             open: true,
-            proxy: {
+            /*proxy: {
                 '/dev-api': {
                     target: 'http://localhost:58647',
                     changeOrigin: true,
                     rewrite: (p) => p.replace(/^\/dev-api/, '')
                 }
-            }
+            }*/
         }
     }
 })

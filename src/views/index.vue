@@ -31,26 +31,30 @@
                 data-original="#000000" data-old_color="#ffffff" fill="#ffffff" class="active-path"></path>
           </g>
         </svg>
-        <img class="container_img" alt="寒王" src="@/assets/hanvon_logo.png"/>
+        <img class="container_img" alt="汉王" src="@/assets/hanvon_logo.png"/>
       </div>
       <div class="container_box_content">
-        <div class="container_box_content_title">汉王工作日志</div>
+        <div class="container_box_content_title">相关法律法规</div>
         <div class="container_box_body_detail">
-          <p>“996”工作制，即每天早 9 点到岗，一直工作到晚上 9 点，每周工作 6 天。</p>
-          <p>“996”工作制的周工作时间为最低 12x6=72 小时。</p>
-          <p>中国大陆工时规管现况（标准工时）： 一天工作时间为 8 小时，平均每周工时不超过 40 小时；加班上限为一天 3 小时及一个月 36 小时，逾时工作薪金不低于平日工资的 150%。而一周最高工时则为 48
-            小时。平均每月计薪天数为 21.75 天。</p>
+          <p>
+            用人单位由于生产经营需要，经与工会和劳动者协商后可以延长工作时间，一般每日不得超过一小时；因特殊原因需要延长工作时间的，在保障劳动者身体健康的条件下延长工作时间每日不得超过三小时，但是每月不得超过三十六小时。</p>
+          <p>有下列情形之一的，用人单位应当按照下列标准支付高于劳动者正常工作时间工资的工资报酬：<br>
+            （一）安排劳动者延长工作时间的，支付不低于工资的百分之一百五十的工资报酬；<br>
+            （二）休息日安排劳动者工作又不能安排补休的，支付不低于工资的百分之二百的工资报酬；<br>
+            （三）法定休假日安排劳动者工作的，支付不低于工资的百分之三百的工资报酬。</p>
+          <p>工资应当以货币形式按月支付给劳动者本人。不得克扣或者无故拖欠劳动者的工资。</p>
+          <p>第三十八条 用人单位应当保证劳动者每周至少休息一日。</p>
         </div>
         <div class="container_body">
-          <div class="container_body_title">相关法律法规</div>
+          <div class="container_body_title">工作日志</div>
           <div class="container_e">
             <div v-for="(item,index) in gridDataList" :key="index">
-              <div class="box_body_title">{{item.title}}</div>
+              <div class="box_body_title">{{ item.title }}</div>
               <div class="box_body_tk">
-                {{item.content}}
+                {{ item.content }}
               </div>
               <div class="box_body_tk_cont">
-                {{item.digest}}
+                {{ item.digest }}
               </div>
             </div>
           </div>
@@ -59,14 +63,15 @@
           <div class="container_foot_func_title">相关事件报道</div>
           <div class="container_foot_body">
             <ul class="container_foot_ul">
+              <li class="container_foot_li">2月23日下午，字节跳动在内网发声明确认了此前网传28岁员工猝死的消息。“13时43分，从医院获知，在抢救41个小时后，吴同学不幸离世。”</li>
               <li class="container_foot_li">2016 年 9 月初起，陆续有网友爆料称，58同城实行全员 996 工作制，且周末加班没有工资。公司方面回应称，为应对业务量高峰期，公司每年 9、10
                 月份都会有动员，属常规性活动，而本次“996 动员”并非强制。（58同城实行全员996工作制 被指意图逼员工主动辞职. 央广网. 2016-09-01. ）
               </li>
-              <li class="container_foot_li">2016 年 9 月初起，陆续有网友爆料称，58同城实行全员 996 工作制，且周末加班没有工资。公司方面回应称，为应对业务量高峰期，公司每年 9、10
-                月份都会有动员，属常规性活动，而本次“996 动员”并非强制。（58同城实行全员996工作制 被指意图逼员工主动辞职. 央广网. 2016-09-01. ）
+              <li class="container_foot_li">
+                B站称，该员工于2020年5月加入B站。对于网传他因加班猝死一事，经内部考勤核查，他按照工作计划正常上下班，工作时间为9:30~18:30，做五休二，在事发前一周内未存在加班等情况。
               </li>
-              <li class="container_foot_li">2016 年 9 月初起，陆续有网友爆料称，58同城实行全员 996 工作制，且周末加班没有工资。公司方面回应称，为应对业务量高峰期，公司每年 9、10
-                月份都会有动员，属常规性活动，而本次“996 动员”并非强制。（58同城实行全员996工作制 被指意图逼员工主动辞职. 央广网. 2016-09-01. ）
+              <li class="container_foot_li">最近，江西景德镇的几位网民报告说，在新天地的一家 "甜蜜蜜
+                "奶茶店，一名员工在上班第一天就突然死亡。据奶茶店员工反应，该员工只工作了一个小时，就突然倒地，当时同事拨打了110和120急救电话，但最终没有抢救过来。
               </li>
             </ul>
           </div>
@@ -90,23 +95,35 @@ import {grudgesList} from '@/api/grudges'
 import {reactive, ref, toRefs, onMounted} from "vue";
 
 const data = reactive({
-  gridDataList: []
+  gridDataList: [
+    {
+      title: "2022年04月29日",
+      content: '公司要求五一劳动节加班四天',
+      digest: "五一劳动节加班并不按照双倍工资付加班费用。"
+    },
+    {
+      title: "2022年02月08日",
+      content: '公司要求过年加班',
+      digest: "过年前三天与后三天加班并承诺双倍工资，后没有兑现双倍工资。"
+    },
+    {
+      title: "2021年07月08日",
+      content: '公司设定加班工资为25元/小时',
+      digest: "加班工资应按照劳动法要求的1.5倍补偿劳动者，并不是固定的25元/小时"
+    },
+  ]
 })
 
 let {gridDataList} = toRefs(data)
 
-async function getList() {
+/*async function getList() {
   await grudgesList().then(res => {
     if (res) {
-      console.log(res)
       gridDataList.value = res.data
     }
   })
-}
+}*/
 
-onMounted(() => {
-  getList()
-})
 
 </script>
 
